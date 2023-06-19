@@ -98,7 +98,7 @@ for i in range(len(A_inviters_index)):
             topKlist = da
     else:
         topKlist = top_voter
-    assert(len(topKlist) == 5)
+    assert(len(set(topKlist)) == 5)
     candidate_voter_list = [usernum2id[str(top_voter_index)] for top_voter_index in topKlist]
     submission_A.append({'triple_id': str('%06d' % i), 'candidate_voter_list': candidate_voter_list})
 with open('submission_A_wtf.json', 'w') as f:
